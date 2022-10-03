@@ -1,4 +1,4 @@
-# Another Static Site Generator
+# Another Static Site Generator (ASSG pronounced ass-gee)
 Takes a collection of text files (*.md) and generates HTML files and other assets that are needed to form a website. 
 
 ## concepts covered
