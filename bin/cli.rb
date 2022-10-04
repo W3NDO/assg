@@ -1,4 +1,4 @@
-# code by W3NDO
+# code written by W3NDO
 
 # this implements all the functionality needed to accept commandline arguments for the program.
 require 'optparse'
