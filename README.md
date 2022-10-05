@@ -23,7 +23,7 @@ I am only supporting a subset of markdown here, specifically
 - styling tags (asterisks, underscores)
 
 ### Grammar 
-
+```
 Heading_1 ::= (/#{1,4}/) Space Expr NewLine
 
 Link ::= '[' Expr ']' '(' Expr ')'
@@ -47,6 +47,7 @@ Space ::= 0032 (ASCII Code for space)
 Word ::= alphabet* | number*
 
 Punctuation ::= . | , | ? | ! | @ | " | ' | & | ( | ) |
+```
 
 Alphabet ::= a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|A|B|C|D|E|F|G|H|I|J|K|L|M|O|N|P|Q|R|S|T|U|V|W|X|Y|Z
 
