@@ -47,9 +47,8 @@ Space ::= 0032 (ASCII Code for space)
 Word ::= alphabet* | number*
 
 Punctuation ::= . | , | ? | ! | @ | " | ' | & | ( | ) |
-```
 
 Alphabet ::= a|b|c|d|e|f|g|h|i|j|k|l|m|n|o|p|q|r|s|t|u|v|w|x|y|z|A|B|C|D|E|F|G|H|I|J|K|L|M|O|N|P|Q|R|S|T|U|V|W|X|Y|Z
 
 Number ::= 0|1|2|3|45|6|7|8|9
-
+```
