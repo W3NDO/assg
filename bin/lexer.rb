@@ -16,7 +16,7 @@
 
 require 'tree' # https://rubygems.org/gems/rubytree
 
-TOKENS = {
+TOKENS = { #values here are regexp
     :T_LEVEL_1_HEADER => /#/,
     :T_LEVEL_2_HEADER => /##/,
     :T_LEVEL_3_HEADER => /###/,
@@ -24,12 +24,14 @@ TOKENS = {
     :T_LEFT_SQUARE_BRACKET => /\]/,
     :T_RIGHT_SQUARE_BRACKET => /\[/,
     :T_LEFT_PAREN => /\(/,
-    :T_RIGHT_PAREN => /\)\/,
-    :T_HYPHEN => /\-/,
-    :T_UNDERSCORE => /\_/,
+    :T_RIGHT_PAREN => /\)/,
+    :T_HYPHEN => /-/,
+    :T_UNDERSCORE => /_/,
     :T_DIGITS => /[0-9]/,
     :T_ALPHABET => /[a-zA-Z]/,
-    :T_ASTERISK => /\*/
+    :T_ASTERISK => /\*/,
+    :T_DOUBLE_ASTERISK => /\*\*/,
+    :T_DOUBLE_UNDESCORE => /__/
 }
 
 class Lexer
