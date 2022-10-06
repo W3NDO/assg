@@ -25,7 +25,7 @@ class Cli
     end
 
     def get_files
-        files =Dir.entries(options[:dir])
+        files = Dir.entries(options[:dir])
         files.map!{ |f| f = "#{options[:dir]}/#{f}"}
         return files
     end
