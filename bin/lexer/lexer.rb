@@ -16,28 +16,30 @@
 
 require 'tree' # https://rubygems.org/gems/rubytree
 
-TOKENS = { #values here are regexp
-    :T_LEVEL_1_HEADER => /#/,
-    :T_LEVEL_2_HEADER => /##/,
-    :T_LEVEL_3_HEADER => /###/,
-    :T_LEVEL_4_HEADER => /####/,
-    :T_LEFT_SQUARE_BRACKET => /\]/,
-    :T_RIGHT_SQUARE_BRACKET => /\[/,
-    :T_LEFT_PAREN => /\(/,
-    :T_RIGHT_PAREN => /\)/,
-    :T_HYPHEN => /-/,
-    :T_UNDERSCORE => /_/,
-    :T_DIGITS => /[0-9]/,
-    :T_ALPHABET => /[a-zA-Z]/,
-    :T_ASTERISK => /\*/,
-    :T_DOUBLE_ASTERISK => /\*\*/,
-    :T_DOUBLE_UNDESCORE => /__/
+
+
+TOKEN_TYPES = {
+    :SENTENCE => []
 }
 
 class Lexer
     attr_accessor :ast_root
+    attr_reader :file_path
 
-    def initialize
+    def initialize(file_path)
         self.ast_root = Tree::TreeNode.new("ROOT", "HTML")
+        self.file_path = file_path
     end
+
+    def build_tree
+        File.open(self.file_path).each.with_index(1) do |lines, line_number| #index here tracks the line number
+            lines.each_with_index do |char, index| #index here will track the line position
+                
+            end
+        end
+    end
+end
+
+File.open("/home/w3ndo/Desktop/CurrentProjects/assg/sample/test.md").each.with_index(1) do |file, line_number|
+    pp "#{line_number} :: #{file}"
 end
