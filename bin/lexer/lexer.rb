@@ -15,6 +15,7 @@
 =end
 
 require 'tree' # https://rubygems.org/gems/rubytree
+require_relative './scanner'
 
 
 
@@ -24,7 +25,8 @@ TOKEN_TYPES = {
 
 class Lexer
     attr_accessor :ast_root
-    attr_reader :file_path
+    attr_accessor :file_path
+    attr_accessor :scanned_tokens
 
     def initialize(file_path)
         self.ast_root = Tree::TreeNode.new("ROOT", "HTML")
@@ -32,14 +34,16 @@ class Lexer
     end
 
     def build_tree
-        File.open(self.file_path).each.with_index(1) do |lines, line_number| #index here tracks the line number
-            lines.each_with_index do |char, index| #index here will track the line position
-                
-            end
+        scanner = Scanner.new
+        File.open(self.file_path).each.with_index(1) do |line, line_number| #index here tracks the line number
+            scanner.line = [line, line_number]
+            scanner.scan_line() #will generate a hash of tokens. Wildly unordered.
         end
+
+        self.scanned_tokens = scanner.found_lexemes
     end
 end
 
-File.open("/home/w3ndo/Desktop/CurrentProjects/assg/sample/test.md").each.with_index(1) do |file, line_number|
-    pp "#{line_number} :: #{file}"
-end
+l = Lexer.new("/home/w3ndo/Desktop/CurrentProjects/assg/sample/test.md")
+l.build_tree
+pp l.scanned_tokens
