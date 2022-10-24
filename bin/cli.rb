@@ -13,13 +13,10 @@ class Cli
     end
 
     def parse
-        OptionParser.new do |option| 
+        OptionParser.new do |option|
             # add new options here, dir is the directory to use
-            # something else like --css would specify what css framework to use. 
+            # something else like --css would specify what css framework to use.
             option.on('--dir=DIR', '-d=DIR', 'Directory for input(markdown) files') do |opt|
-                if opt == "."
-                    opt = Dir.pwd
-                end
                 self.options[:dir] = opt
             end
 
@@ -27,15 +24,9 @@ class Cli
         end.parse!
     end
 
-    def get_options
-        self.options
-    end
-
     def get_files
-        return Dir.entries(self.get_options[:dir])
+        files = Dir.entries(options[:dir])
+        files.map!{ |f| f = "#{options[:dir]}/#{f}"}
+        return files
     end
 end
-
-cli = Cli.new()
-cli.parse
-puts cli.get_options

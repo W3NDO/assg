@@ -28,3 +28,15 @@ DEPENDENCIES
 
 BUNDLED WITH
    2.3.22
+    kramdown (2.4.0)
+      rexml
+    rexml (3.2.5)
+
+PLATFORMS
+  ruby
+
+DEPENDENCIES
+  kramdown (~> 2.4)
+
+BUNDLED WITH
+   2.1.4

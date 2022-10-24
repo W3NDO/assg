@@ -1,0 +1,15 @@
+<h1 id="my-awesome-page">My Awesome Page</h1>
+
+<ul>
+  <li><a href="about.url">about</a></li>
+  <li><a href="contact.url">contact</a></li>
+  <li><a href="some_other.url">some other link</a></li>
+</ul>
+
+<p>Welcome to this really cool page I built using <strong>assg</strong></p>
+
+<p>You would love to see this functionality at <em>W3NDO&#8217;s GITHUB</em></p>
+
+<h2 id="idk-what-else-to-say">IDK WHAT ELSE TO SAY</h2>
+
+<p>Whenever I&#8217;m feeling sad, I stop being sad and be awesome instead. That however never goes to plan.</p>
